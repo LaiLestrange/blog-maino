@@ -52,6 +52,7 @@ group :development, :test do
   gem 'debug', platforms: [:mri, :windows]
   gem 'factory_bot_rails'
   gem 'rspec-rails'
+  gem 'capybara'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
 end
@@ -68,7 +69,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'shoulda-matchers'
   gem 'simplecov', require: false
 end
