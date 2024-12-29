@@ -1,0 +1,46 @@
+name: Ruby on Rails CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      db:
+        image: postgres:13
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: s3nh4
+          POSTGRES_DB: mainoblog_test
+        ports:
+          - 5432:5432
+    env:
+      RAILS_ENV: test
+      PGHOST: 127.0.0.1
+      PGUSER: postgres
+      PGPASSWORD: s3nh4
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+          bundler-cache: true
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Prepare database
+        run: bin/rails db:setup
+
+      - name: Run tests
+        run: bundle exec rspec
+
+      - name: Lint Ruby files
+        run: bundle exec rubocop
