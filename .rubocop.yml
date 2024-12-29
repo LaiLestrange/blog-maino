@@ -26,10 +26,5 @@ Rails/I18nLocaleTexts:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-# Metrics/BlockLength:
-#   AllowedMethods: ['describe', 'context', 'feature', 'scenario', 'let', 'it']
-#   Exclude:
-#     - 'spec/factories/**/*'
-
 Style/SymbolArray:
   EnforcedStyle: brackets
