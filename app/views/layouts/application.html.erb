@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mainoblog</title>
+    <title>MainoBlog</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <%= csrf_meta_tags %>
@@ -11,9 +11,17 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="container-fluid">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+  <body class="off-white">
+    <%= render 'layouts/navbar' %>
+    <div class="container BLUE">
+      <% if notice %>
+        <div class="mt-3 alert alert-warning text-center notice GREEN"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="mt-3 alert alert-danger text-center alert PURPLE"><%= alert %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
+
 </html>
