@@ -7,7 +7,7 @@ on:
     branches: ["main"]
 
 jobs:
-  test:
+  pipeline:
     runs-on: ubuntu-latest
     services:
       db:
