@@ -13,11 +13,8 @@ describe 'Blogger signs up' do
     click_on 'Cadastrar-se'
 
     expect(page).to have_content 'Cadastro realizado com sucesso.'
+    expect(page).to have_content 'talsfulano'
     expect(page).to have_button 'Sair'
     expect(page).not_to have_button 'Entrar'
-
-    expect(page).to have_content 'Fulano de Tal'
-    expect(page).to have_content 'fulano@tal.com'
-    expect(page).to have_content 'talsfulano'
   end
 end

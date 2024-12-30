@@ -1,13 +1,20 @@
 <div class="navbar navbar-expand-lg navbar-light bg-light shadow-sm w-100">
   <div class="container-fluid d-flex justify-content-between">
-    <h1 class="navbar-brand mb-0"><%= I18n.t("app.title") %></h1>
+    <h1 class="navbar-brand mb-0 me-0"><%= I18n.t("app.title") %></h1>
     <% if blogger_signed_in? %>
-      <div> <%= button_to I18n.t("devise.shared.links.sign_out"), destroy_blogger_session_path, method: :delete, class: "btn btn-secondary btn-sm" %> </div>
+      <div>
+        <i class="bi bi-person-fill"></i>
+        <span class="mx-1"><%= current_blogger.username %></span>
+      </div>
+       <div>
+        <%= button_to I18n.t("devise.shared.links.sign_out"), destroy_blogger_session_path, method: :delete, class: "btn btn-secondary btn-sm" %>
+      </div>
     <% else %>
       <div> <%= link_to I18n.t("devise.sessions.new.sign_in"), new_blogger_session_path, class: "btn btn-secondary btn-sm"  %> </div>
     <% end %>
   </div>
 </div>
+
 
 
 
