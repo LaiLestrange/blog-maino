@@ -4,7 +4,7 @@
     <div class="text-center mb-4">
       <h2><%= I18n.t("devise.sessions.new.sign_in") %></h2>
     </div>
-    <div class="mb-4">
+    <div class="mb-4 sign-in-form ">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field mb-2">
           <%= f.label :email, class: "col-form-label-sm" %><br />
