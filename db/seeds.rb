@@ -10,13 +10,13 @@
 blogger1 = Blogger.create!(
   email: 'blogger1@email.com',
   password: 'bl0gg3r',
-  username: 'first_blogger',
+  username: 'blogger01',
   fullname: 'Blogger Fulano de Tal'
 )
 blogger2 = Blogger.create!(
   email: 'blogger2@email.com',
   password: 'bl0gg3r',
-  username: 'second_blogger',
+  username: 'blogger02',
   fullname: 'Blogger Siclano Beltrano'
 )
 p "Created #{Blogger.count} bloggers"
