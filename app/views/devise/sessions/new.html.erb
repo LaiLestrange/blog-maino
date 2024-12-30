@@ -1,0 +1,38 @@
+<div class="mt-5 d-flex justify-content-center align-items-center">
+
+  <div class="p-4 border rounded-3 shadow W350">
+    <div class="text-center mb-4">
+      <h2><%= I18n.t("devise.sessions.new.sign_in") %></h2>
+    </div>
+    <div class="mb-4">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="field mb-2">
+          <%= f.label :email, class: "col-form-label-sm" %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-sm"%>
+        </div>
+
+        <div class="field mb-2">
+          <%= f.label :password, class: "col-form-label-sm" %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-sm" %>
+        </div>
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <% if devise_mapping.rememberable? %>
+            <div class="field mb-2">
+              <%= f.check_box :remember_me, class: "form-check-input" %>
+              <%= f.label :remember_me, class: "form-check-label" %>
+            </div>
+          <% end %>
+
+          <div class="actions">
+            <%= f.submit I18n.t("devise.sessions.new.sign_in"), class: "btn btn-secondary btn-sm" %>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+    <div class="text-center">
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>
