@@ -23,7 +23,7 @@ describe 'Blogger signs in' do
   it 'and logs out' do
     blogger = create(:blogger)
 
-    login_as blogger, scope: :blogger
+    login_as blogger
     visit root_path
     click_on 'Sair'
 
