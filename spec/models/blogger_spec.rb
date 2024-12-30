@@ -10,4 +10,17 @@ RSpec.describe Blogger, type: :model do
     it { should validate_presence_of(:username) }
     it { should validate_uniqueness_of(:username) }
   end
+
+  describe '#format' do
+    it 'username is alphanumeric' do
+      blogger = Blogger.new(username: 'ç;é=à\ñ')
+
+      blogger.valid?
+      errs = blogger.errors
+      result = errs.include?(:username)
+
+      expect(result).to be true
+      expect(errs[:username]).to include 'deve conter apenas letras e/ou números'
+    end
+  end
 end
