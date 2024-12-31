@@ -7,11 +7,11 @@ describe 'Blogger edits account' do
                      fullname: 'Blogger Girl')
 
     login_as blogger
-    visit root_path
+    visit edit_blogger_registration_path
     click_on 'blogger2024'
     fill_in 'Nome', with: 'Gossip Girl xoxo'
     fill_in 'Usuário', with: 'gossiper2025'
-    clcik_on 'Salvar'
+    click_on 'Atualizar'
 
     expect(page).to have_content 'Cadastro atualizado com sucesso'
     expect(page).to have_content 'gossiper2025'

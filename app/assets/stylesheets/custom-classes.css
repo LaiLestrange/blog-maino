@@ -1,3 +1,11 @@
 .W350 {
   width: 350px;
 }
+
+.MW150 {
+  max-width: 150px;
+}
+
+.MW400 {
+  max-width: 400px;
+}

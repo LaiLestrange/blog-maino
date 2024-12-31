@@ -81,7 +81,7 @@ pt-BR:
       success: Autorizado com sucesso de uma conta de %{kind}.
     passwords:
       edit:
-        change_my_password: Alterar minha senha
+        change_password: Alterar senha
         change_your_password: Alterar sua senha
         confirm_new_password: Confirme sua nova senha
         new_password: Nova senha
@@ -98,13 +98,13 @@ pt-BR:
       edit:
         edit_profile: Editar perfil
         are_you_sure: Você tem certeza?
-        cancel_my_account: Cancelar minha conta
+        cancel_account: Cancelar conta
         currently_waiting_confirmation_for_email: "No momento esperando por: %{email}"
         leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
         title: Editar %{resource}
         unhappy: Não está contente?
         update: Atualizar
-        we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
+        current_password_to_confirm: Informe sua senha atual para confirmar
       new:
         sign_up: Cadastrar-se
         new_sign_up: Cadastrar usuário

@@ -3,8 +3,10 @@
     <h1 class="navbar-brand mb-0 me-0"><%= I18n.t("app.title") %></h1>
     <% if blogger_signed_in? %>
       <div>
-        <i class="bi bi-person-fill"></i>
-        <span class="mx-1"><%= current_blogger.username %></span>
+        <%= link_to edit_blogger_registration_path, class: "btn btn-outline-secondary btn-sm" do %>
+          <i class="bi bi-person-fill"></i>
+          <span class="mx-1"><%= current_blogger.username %></span>
+        <% end %>
       </div>
        <div>
         <%= button_to I18n.t("devise.shared.links.sign_out"), destroy_blogger_session_path, method: :delete, class: "btn btn-secondary btn-sm" %>
@@ -14,6 +16,7 @@
     <% end %>
   </div>
 </div>
+
 
 
 

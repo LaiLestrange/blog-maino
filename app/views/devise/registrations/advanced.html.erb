@@ -1,0 +1,7 @@
+ <%= link_to I18n.t("devise.passwords.edit.change_password"), root_path, class: "btn btn-danger btn-sm" %>
+
+
+<% ask_confirm = I18n.t("devise.registrations.edit.are_you_sure")   %>
+<%= button_to I18n.t("devise.registrations.edit.cancel_account"), registration_path(resource_name),
+              data: { confirm: ask_confirm, turbo_confirm: ask_confirm },
+              method: :delete, class: "btn btn-danger btn-sm"  %>
