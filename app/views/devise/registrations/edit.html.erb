@@ -27,8 +27,8 @@
 
         <div class="mb-2 gap-3 d-flex align-items-center justify-content-center">
           <div class="field mb-2">
-            <%= f.label :current_password, I18n.t("devise.registrations.edit.current_password_to_confirm"), class: "col-form-label-sm"  %>
-            <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control form-control-sm" %>
+            <%= f.label :current_password, I18n.t("devise.registrations.edit.current_password"), class: "col-form-label-sm" %>
+            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: I18n.t("devise.registrations.edit.to_confirm"), class: "form-control form-control-sm" %>
           </div>
         </div>
 
