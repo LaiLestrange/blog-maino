@@ -24,7 +24,7 @@ describe 'Blogger signs up' do
     fill_in 'E-mail', with: ''
     click_on 'Cadastrar-se'
 
-    expect(page).to have_content 'Não foi possível salvar usuário'
+    expect(page).to have_content 'Não foi possível salvar'
     expect(page).to have_content 'E-mail não pode ficar em branco'
     expect(page).to have_content 'Usuário já está em uso'
   end

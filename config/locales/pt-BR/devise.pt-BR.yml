@@ -152,5 +152,6 @@ pt-BR:
       not_saved:
         one: "Não foi possível salvar %{resource}: 1 erro"
         other: "Não foi possível salvar %{resource}: %{count} erros."
+      cant_save: "Não foi possível salvar"
       verify_error: "Verifique os erros abaixo:"
       not_alphanumeric: "deve conter apenas letras e/ou números"
