@@ -1,43 +1,47 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="mt-5 d-flex justify-content-center align-items-center">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="p-4 border rounded-3 shadow MW400">
+    <div class="text-center mb-4">
+      <h2><%= I18n.t("devise.registrations.edit.edit_profile")%></h2>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <div class="my-1 sign-up-form ">
+     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+        <div class="field mb-2">
+          <%= f.label :email, class: "col-form-label-sm" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-sm" %>
+        </div>
+
+        <div class="mb-2 gap-3 d-flex align-items-center justify-content-between">
+          <div class="field mb-2">
+            <%= f.label :fullname, class: "col-form-label-sm" %>
+            <%= f.text_field :fullname, class: "form-control form-control-sm" %>
+          </div>
+
+          <div class="field mb-2">
+            <%= f.label :username, class: "col-form-label-sm" %>
+            <%= f.text_field :username, class: "form-control form-control-sm" %>
+          </div>
+        </div>
+
+        <div class="mb-2 gap-3 d-flex align-items-center justify-content-center">
+          <div class="field mb-2">
+            <%= f.label :current_password, I18n.t("devise.registrations.edit.current_password"), class: "col-form-label-sm" %>
+            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: I18n.t("devise.registrations.edit.to_confirm"), class: "form-control form-control-sm" %>
+          </div>
+        </div>
+
+        <div class="mb-2 d-flex align-items-center justify-content-between">
+          <div class="actions">
+            <%= f.submit I18n.t("devise.registrations.edit.update"), class: "btn btn-success btn-sm" %>
+          </div>
+          <div>
+            <%= link_to I18n.t("devise.shared.links.back"), :back, class: "btn btn-secondary btn-sm" %>
+          </div>
+        </div>
+        <%= render "devise/shared/error_messages", resource: resource %>
+      <% end %>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>
