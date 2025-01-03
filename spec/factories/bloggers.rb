@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :blogger do
-    email { 'blogger@email.com' }
+    sequence(:username) { "#{_1}bl0gg3r" }
+    sequence(:email) { "blogger#{_1}@email.com" }
     password { 'p4ssw0rd' }
-    username { 'th3bl0gg3r' }
     fullname { 'Name of Blogger' }
   end
 end

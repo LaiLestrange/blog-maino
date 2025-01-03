@@ -7,14 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-blogger1 = Blogger.create!(
-  email: 'blogger1@email.com',
+Blogger.create!(
+  email: 'blogger1@seed.com',
   password: 'bl0gg3r',
   username: 'blogger01',
   fullname: 'Blogger Fulano de Tal'
 )
-blogger2 = Blogger.create!(
-  email: 'blogger2@email.com',
+Blogger.create!(
+  email: 'blogger2@seed.com',
   password: 'bl0gg3r',
   username: 'blogger02',
   fullname: 'Blogger Siclano Beltrano'

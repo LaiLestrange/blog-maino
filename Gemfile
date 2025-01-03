@@ -53,6 +53,7 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   gem 'debug', platforms: [:mri, :windows]
+  gem 'dotenv-rails'
   gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'rubocop', require: false
