@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    text { "MyString" }
+    text { 'MyString' }
     blogger { nil }
   end
 end
