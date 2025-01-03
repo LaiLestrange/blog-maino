@@ -4,6 +4,8 @@ class Blogger < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :posts, dependent: :destroy
+
   validates :fullname, presence: true
   validates :username, presence: true,
                        format: { with: /\A[a-zA-Z0-9]+\z/, message: I18n.t('errors.messages.not_alphanumeric') }
