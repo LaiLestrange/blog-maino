@@ -134,7 +134,8 @@ pt-BR:
       taken: já está em uso
       too_long:
         one: "é muito longo (máximo: %{count} caracter)"
-        other: "é muito longo (máximo: %{count} caracteres)"
+        other: "Use apenas %{count} caracteres!"
+        # other: "é muito longo (máximo: %{count} caracteres)" #ORIGINAL
       too_short:
         one: "é muito curto (mínimo: %{count} caracter)"
         other: "é muito curto (mínimo: %{count} caracteres)"

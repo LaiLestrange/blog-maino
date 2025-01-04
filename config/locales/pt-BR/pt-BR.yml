@@ -2,7 +2,7 @@ pt-BR:
   activerecord:
     attributes:
       post:
-        text: post
+        text: Post
     models:
       post:
         one: post
@@ -17,3 +17,4 @@ pt-BR:
       write_post: O que está pensando?
       submit: Postar
       created_post: Postado com sucesso!
+      cant_post: Não foi possível postar!

@@ -5,17 +5,16 @@ class PostsController < ApplicationController
   def show; end
 
   def new
-    @post = Post.new(blogger: @blogger)
+    @post = @blogger.posts.new
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.blogger = @blogger
+    @post = @blogger.posts.new(post_params)
     if @post.save
-      redirect_to post_path(@post), notice: I18n.t('app.posts.created_post')
+      redirect_to @post, notice: I18n.t('app.posts.created_post')
     else
-      flash.now[:notice] = I18n.t('post.cant_post')
-      render 'new'
+      flash.now[:alert] = I18n.t('app.posts.cant_post')
+      render :new
     end
   end
 
