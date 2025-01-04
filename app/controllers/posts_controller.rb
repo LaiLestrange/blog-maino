@@ -12,7 +12,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.blogger = @blogger
     if @post.save
-      redirect_to post_path(@post), notice: I18n.t('app.created_post')
+      redirect_to post_path(@post), notice: I18n.t('app.posts.created_post')
     else
       flash.now[:notice] = I18n.t('post.cant_post')
       render 'new'

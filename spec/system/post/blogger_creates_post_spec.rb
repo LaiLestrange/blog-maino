@@ -6,12 +6,12 @@ describe 'Blogger creates post' do
     login_as blogger
 
     visit root_path
-    click_on 'Novo post'
-    fill_in 'post', with: 'E aí pessoal! Esse é meu primeiro post!'
-    click_on 'Enviar'
+    find('.new-post-btn').click
+    fill_in 'post_text', with: 'E aí pessoal! Esse é meu primeiro post!'
+    click_on 'Postar'
 
     expect(page).to have_content 'E aí pessoal! Esse é meu primeiro post!'
     expect(page).to have_content 'Postado com sucesso!'
-    expect(page).not_to have_button 'Enviar'
+    expect(page).not_to have_button 'Postar'
   end
 end

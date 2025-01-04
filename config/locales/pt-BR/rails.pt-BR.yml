@@ -223,9 +223,10 @@ pt-BR:
       two_words_connector: " e "
       words_connector: ", "
   time:
-    am: am
     formats:
+      custom: "%Hh%M - %a, %d de %B, %Y"
       default: "%a, %d de %B de %Y, %H:%M:%S %z"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+    am: am
     pm: pm

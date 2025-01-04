@@ -1,27 +1,20 @@
 <div class="mt-5 d-flex justify-content-center align-items-center ">
-
   <div class="p-4 border rounded-3 shadow W350">
-    <div class="text-center mb-4">
-      <h2><%= I18n.t("app.new_post") %></h2>
-    </div>
-
     <div class="mb-4 new-post-form ">
       <%= form_with model: @post do |f|%>
         <div class="field mb-2">
-          <%= f.label :text, class: "col-form-label-sm" %>
-          <%= f.text_area :text, autofocus: true, class: "form-control form-control-sm" %>
+          <%= f.text_area :text, autofocus: true, class: "form-control form-control-sm post-field",
+              placeholder: I18n.t("app.posts.write_post"), aria: { label: I18n.t("app.posts.post_text") }, required: true %>
         </div>
-
-        <div class="mt-3 text-center actions">
-          <%= f.submit I18n.t("app.submit"), class: "btn btn-secondary btn-sm" %>
+        <div class="mt-4 mb-2 d-flex align-items-center justify-content-between">
+          <div class="actions">
+            <%= f.submit I18n.t("app.posts.submit"), class: "btn btn-secondary btn-sm" %>
+          </div>
+          <div>
+              <%= link_to I18n.t("app.btn.back"), :back, class: "btn btn-outline-secondary btn-sm" %>
+          </div>
         </div>
-
-
-
       <% end %>
-
-
     </div>
-
   </div>
 </div>

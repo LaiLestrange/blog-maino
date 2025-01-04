@@ -9,6 +9,11 @@ pt-BR:
         other: posts
   app:
     title: Blog Mainô
-    new_post: Novo post
-    submit: Enviar
-    created_post: Postado com sucesso!
+    btn:
+      back: Voltar
+    posts:
+      post_text: post
+      new_post: Novo post
+      write_post: O que está pensando?
+      submit: Postar
+      created_post: Postado com sucesso!
