@@ -15,11 +15,13 @@ pt-BR:
       post_text: post
       new_post: Novo post
       edit_post: Editar post
-      edited_post: Editado
+      delete_post: Deletar post
       write_post: O que está pensando?
-      submit: Postar
-      update: Atualizar
-      created_post: Postado com sucesso!
-      updated_post: Atualizado com sucesso!
+      confirm_delete: Quer mesmo deletar o post?
       cant_post: Não foi possível postar!
       cant_update: Não foi possível atualizar!
+      submit: Postar
+      update: Atualizar
+      edited_post: Editado
+      created_post: Postado com sucesso!
+      updated_post: Atualizado com sucesso!

@@ -17,3 +17,30 @@
   font-size: 0.875rem;
   word-wrap: break-word;
 }
+
+
+/* Estilização global para alinhar link e botão */
+.edit-post-btn, .delete-post-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  color: inherit;
+  cursor: pointer;
+  font-size: inherit;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 5px;
+  transition: color 0.2s ease-in-out;
+}
+
+.delete-post-btn form {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.edit-post-btn:hover i,
+.delete-post-btn:hover i {
+  color: #007BFF;
+}
