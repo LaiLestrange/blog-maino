@@ -1,3 +1,20 @@
 pt-BR:
+  activerecord:
+    attributes:
+      post:
+        text: Post
+    models:
+      post:
+        one: post
+        other: posts
   app:
-    title: "Blog Mainô"
+    title: Blog Mainô
+    btn:
+      back: Voltar
+    posts:
+      post_text: post
+      new_post: Novo post
+      write_post: O que está pensando?
+      submit: Postar
+      created_post: Postado com sucesso!
+      cant_post: Não foi possível postar!

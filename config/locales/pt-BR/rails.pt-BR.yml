@@ -134,7 +134,8 @@ pt-BR:
       taken: já está em uso
       too_long:
         one: "é muito longo (máximo: %{count} caracter)"
-        other: "é muito longo (máximo: %{count} caracteres)"
+        other: "Use apenas %{count} caracteres!"
+        # other: "é muito longo (máximo: %{count} caracteres)" #ORIGINAL
       too_short:
         one: "é muito curto (mínimo: %{count} caracter)"
         other: "é muito curto (mínimo: %{count} caracteres)"
@@ -223,9 +224,10 @@ pt-BR:
       two_words_connector: " e "
       words_connector: ", "
   time:
-    am: am
     formats:
+      custom: "%Hh%M - %a, %d de %B, %Y"
       default: "%a, %d de %B de %Y, %H:%M:%S %z"
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
+    am: am
     pm: pm

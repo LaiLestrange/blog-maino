@@ -1,0 +1,24 @@
+<div class="mt-5 d-flex justify-content-center align-items-center ">
+  <div class="p-4 border rounded-3 shadow W350">
+    <div class="mb-4 new-post-form ">
+      <%= form_with model: @post do |f|%>
+        <div class="field mb-2">
+          <%= f.text_area :text, autofocus: true, class: "form-control form-control-sm post-field",
+              placeholder: I18n.t("app.posts.write_post"), aria: { label: I18n.t("app.posts.post_text") }, required: true %>
+              <% if @post.errors[:text].any? %>
+              <% too_long_message = @post.errors.full_messages_for(:text).first.gsub(@post.class.human_attribute_name(:text), "").strip%>
+                <p class="mt-1 small text-muted text-end"> <%= too_long_message  %></p>
+              <% end %>
+        </div>
+        <div class="mt-4 mb-2 d-flex align-items-center justify-content-between">
+          <div class="actions">
+            <%= f.submit I18n.t("app.posts.submit"), class: "btn btn-secondary btn-sm", data: { turbo: false }  %>
+          </div>
+          <div>
+              <%= link_to I18n.t("app.btn.back"), :back, class: "btn btn-outline-secondary btn-sm" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
