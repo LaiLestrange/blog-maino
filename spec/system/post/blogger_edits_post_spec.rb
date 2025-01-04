@@ -15,6 +15,6 @@ describe 'Blogger edits post' do
     expect(page).not_to have_content 'original text'
     expect(page).to have_content 'edited text'
     expect(page).to have_content 'Atualizado com sucesso!'
-    expect(page).to have_content '(Editado)'
+    expect(page).to have_css '.edited-icon'
   end
 end

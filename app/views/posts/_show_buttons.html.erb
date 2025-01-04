@@ -1,0 +1,17 @@
+
+<span class="mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edit_post") %>">
+  <%= link_to edit_post_path, class: "edit-post-btn text-decoration-none" do %>
+    <i class="bi bi-pencil me-1"></i>
+  <% end %>
+</span>
+
+<div class="text-end">
+  <% if @post.edited? %>
+    <span class="ms-2 edited-icon">
+      <i class="bi bi-marker-tip" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edited_post") %>"></i>
+    </span>
+  <% end %>
+  <i class="bi bi-clock ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
+</div>
+
+
