@@ -7,7 +7,7 @@ describe 'Blogger edits post' do
 
     login_as blogger
     visit post_path(post)
-    click_on 'Editar'
+    find('.edit-post-btn').click
     fill_in 'Post', with: 'edited text'
     click_on 'Atualizar'
 

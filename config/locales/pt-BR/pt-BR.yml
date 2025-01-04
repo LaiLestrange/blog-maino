@@ -14,6 +14,7 @@ pt-BR:
     posts:
       post_text: post
       new_post: Novo post
+      edit_post: Editar post
       write_post: O que está pensando?
       submit: Postar
       created_post: Postado com sucesso!

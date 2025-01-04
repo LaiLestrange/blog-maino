@@ -16,11 +16,17 @@
       <span class="mx-1">
         <i class="bi bi-clock" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
       </span>
-      <span class="mx-1">
-        <i class="bi bi-clock" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
+      <span class="mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edit_post") %>">
+        <%= link_to new_post_path, class: "edit-post-btn" do %>
+          <i class="bi bi-pencil"></i>
+        <% end %>
       </span>
     </div>
 
 
   </div>
 </div>
+
+
+
+
