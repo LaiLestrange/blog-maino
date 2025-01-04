@@ -1,12 +1,14 @@
 class PostsController < ApplicationController
   before_action :authenticate_blogger!
   before_action :set_blogger, only: [:new, :create]
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :edit, :update]
   def show; end
 
   def new
     @post = @blogger.posts.new
   end
+
+  def edit; end
 
   def create
     @post = @blogger.posts.new(post_params)
@@ -15,6 +17,16 @@ class PostsController < ApplicationController
     else
       flash.now[:alert] = I18n.t('app.posts.cant_post')
       render :new
+    end
+  end
+
+  def update
+    if @post.update(post_params)
+      @post.edited!
+      redirect_to post_path(@post), notice: I18n.t('app.posts.updated_post')
+    else
+      flash.now[:alert] = I18n.t('app.posts.cant_update')
+      render :edit
     end
   end
 
