@@ -31,8 +31,7 @@ describe 'Blogger cant edit post' do
     TEXT
 
     login_as blogger
-    visit post_path(post)
-    find('.edit-post-btn').click
+    visit edit_post_path(post)
     fill_in 'post_text', with: text_longer_than_140char
     click_on 'Atualizar'
 
