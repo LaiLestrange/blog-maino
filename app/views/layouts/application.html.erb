@@ -12,7 +12,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="off-white">
+  <body class="off-white" data-bs-toggle="tooltip">
     <%= render 'layouts/navbar' %>
     <div class="container">
       <% if notice %>
@@ -23,13 +23,7 @@
       <% end %>
       <%= yield %>
     </div>
-    <% unless controller_name == "posts" && ["new"].include?(action_name)  %>
-      <%= link_to new_post_path, class: "new-post-btn btn btn-secondary rounded-circle d-flex align-items-center justify-content-center" do %>
-        <i class="bi bi-plus-lg"></i>
-      <% end %>
-    <% end %>
-
-
+    <%= render 'layouts/new_post_button' %>
   </body>
 
 </html>

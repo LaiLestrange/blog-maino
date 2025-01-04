@@ -1,0 +1,7 @@
+<% unless controller_name == "posts" && ["new"].include?(action_name)  %>
+  <div data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.new_post") %>">
+    <%= link_to new_post_path, class: "new-post-btn btn btn-secondary rounded-circle d-flex align-items-center justify-content-center" do %>
+      <i class="bi bi-plus-lg"></i>
+    <% end %>
+  </div>
+<% end %>

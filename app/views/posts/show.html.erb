@@ -11,12 +11,16 @@
       <p class="m-0"><%= @post.text %></p>
     </div>
 
+
     <div class="text-center small text-muted">
-      <i class="bi bi-clock"></i>
-      <span class="ms-2">
-        <%= I18n.l(@post.created_at, format: :custom) %>
+      <span class="mx-1">
+        <i class="bi bi-clock" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
+      </span>
+      <span class="mx-1">
+        <i class="bi bi-clock" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
       </span>
     </div>
+
 
   </div>
 </div>
