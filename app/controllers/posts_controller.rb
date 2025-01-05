@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_blogger!
   before_action :set_blogger, only: [:new, :create]
-  before_action :set_post, only: [:show, :edit, :update]
+  before_action :set_post, only: [:show, :edit, :update, :delete_post]
   def show; end
 
   def new
@@ -28,6 +28,11 @@ class PostsController < ApplicationController
       flash.now[:alert] = I18n.t('app.posts.cant_update')
       render :edit
     end
+  end
+
+  def delete_post
+    @post.deleted!
+    redirect_to posts_path, notice: I18n.t('app.posts.deleted_post')
   end
 
   private

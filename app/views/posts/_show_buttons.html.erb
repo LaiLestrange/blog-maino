@@ -2,12 +2,10 @@
   <%= link_to edit_post_path, class: "edit-post-btn text-decoration-none d-flex align-items-center" do %>
     <i class="bi bi-pencil mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edit_post") %>"></i>
   <% end %>
-
-  <%= form_with url: post_path(@post), method: :delete, data: { confirm: I18n.t("app.posts.confirm_delete") }, html: { class: "delete-post-form d-flex align-items-center m-0" } do %>
-    <%= button_tag type: "submit", id: "delete-post-btn" , class: "delete-post-btn text-decoration-none d-flex align-items-center border-0 bg-transparent", data: { turbo: false } do %>
-      <i class="bi bi-trash3 me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.delete_post") %>"></i>
-    <% end %>
+  <%= link_to delete_post_path, class: "delete-post-btn text-decoration-none d-flex align-items-center" do %>
+    <i class="bi bi-trash3 mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.delete_post") %>"></i>
   <% end %>
+
 </span>
 
 <div class="text-end">
