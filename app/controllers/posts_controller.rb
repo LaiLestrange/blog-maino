@@ -22,7 +22,6 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      @post.edited!
       redirect_to post_path(@post), notice: I18n.t('app.posts.updated_post')
     else
       flash.now[:alert] = I18n.t('app.posts.cant_update')
