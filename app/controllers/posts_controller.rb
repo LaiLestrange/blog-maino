@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
-  before_action :authenticate_blogger!
+  before_action :authenticate_blogger!, except: [:show]
   before_action :set_blogger, only: [:new, :create]
   before_action :set_post, only: [:show, :edit, :update, :delete_post]
+
   def show; end
 
   def new

@@ -1,8 +1,12 @@
 <div>
   <% @posts.each do |post| %>
-    <%= render 'posts/feed_post', post: post %>
+    <%= link_to post_path(post), class: 'no-decoration' do %>
+      <%= render 'posts/feed_post', post: post %>
+    <% end %>
   <% end %>
 </div>
+
+
 
 
 

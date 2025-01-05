@@ -9,3 +9,8 @@
 .MW400 {
   max-width: 400px;
 }
+
+.no-decoration {
+  text-decoration: none;
+  color: inherit;
+}
