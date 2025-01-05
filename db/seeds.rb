@@ -7,16 +7,59 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-Blogger.create!(
+b1 = Blogger.create!(
   email: 'blogger1@seed.com',
   password: 'bl0gg3r',
   username: 'blogger01',
-  fullname: 'Blogger Fulano de Tal'
+  fullname: 'Buffy Anne Summers'
 )
-Blogger.create!(
+b2 = Blogger.create!(
   email: 'blogger2@seed.com',
   password: 'bl0gg3r',
   username: 'blogger02',
-  fullname: 'Blogger Siclano Beltrano'
+  fullname: 'Willow Rosemberg'
 )
-p "Created #{Blogger.count} bloggers"
+b3 = Blogger.create!(
+  email: 'blogger3@seed.com',
+  password: 'bl0gg3r',
+  username: 'blogger03',
+  fullname: 'Xander Harris'
+)
+p "> created #{Blogger.count} bloggers"
+
+#p1 =
+Post.create!(
+  blogger: b1,
+  status: :deleted,
+  text: "post da Buffy Summers"
+)
+
+p2 = Post.create!(
+  blogger: b1,
+  status: :posted,
+  text: "post da Buffy Summers, the vampire slayer"
+)
+p2.update!(text: "post da Buffy Summers, slayer extraordinaire")
+
+#p3 =
+Post.create!(
+  blogger: b2,
+  status: :posted,
+  text: "post da Willow Rosemberg, be witchin"
+)
+
+p4 = Post.create!(
+  blogger: b2,
+  status: :posted,
+  text: "b e witching"
+)
+p4.deleted!
+
+#p5 =
+Post.create!(
+  blogger: b3,
+  status: :posted,
+  text: "post do Xander"
+)
+
+p "> created #{Post.count} posts"
