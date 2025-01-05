@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :posts, only: [:new, :create, :show, :edit, :update]
+  # resources :posts, only: [:new, :create, :show, :edit, :update, :delete, :destroy]
+  resources :posts , only: [:new, :create, :show, :index, :edit, :update]
+  get 'posts/:id/delete', to: 'posts#delete_post', as: :delete_post
 end

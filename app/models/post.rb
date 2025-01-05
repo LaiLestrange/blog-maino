@@ -4,5 +4,5 @@ class Post < ApplicationRecord
   validates :text, presence: true
   validates :text, length: { maximum: 140 }
 
-  enum :status, { posted: 0, edited: 5 }, default: :posted
+  enum :status, { posted: 0, edited: 5, deleted: 9 }, default: :posted
 end
