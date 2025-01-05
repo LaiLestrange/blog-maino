@@ -10,11 +10,13 @@
 
 <div class="text-end">
   <% if @post.edited? %>
+  <% tooltip_edited = I18n.t("app.posts.updated_post_at", time: I18n.l(@post.updated_at, format: :custom) ) %>
     <span class="mx-1 edited-icon d-inline-flex align-items-center">
-      <i class="bi bi-marker-tip" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edited_post") %>"></i>
+      <i class="bi bi-marker-tip" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= tooltip_edited %>"></i>
     </span>
   <% end %>
-  <i class="bi bi-clock mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
+  <% tooltip_created = I18n.t("app.posts.created_post_at", time: I18n.l(@post.created_at, format: :custom) ) %>
+  <i class="bi bi-clock mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= tooltip_created %>"></i>
 </div>
 
 

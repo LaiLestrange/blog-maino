@@ -3,5 +3,9 @@
     <div class="mb-4 edit-post-form ">
       <%= render 'posts/form' %>
     </div>
+
+    <div class="text-end">
+        <%= link_to I18n.t("app.posts.delete_post"), delete_post_path, class: "btn btn-danger btn-sm" %>
+    </div>
   </div>
 </div>

@@ -24,5 +24,7 @@ pt-BR:
       update: Atualizar
       edited_post: Editado
       created_post: Postado com sucesso!
+      updated_post_at: Editado às %{time}
+      created_post_at: Criado às %{time}
       updated_post: Atualizado com sucesso!
       deleted_post: Post deletado com sucesso!
