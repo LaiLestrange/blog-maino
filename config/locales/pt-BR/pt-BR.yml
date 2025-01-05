@@ -9,6 +9,7 @@ pt-BR:
         other: posts
   app:
     title: Blog Mainô
+    feed: Posts mais recentes
     btn:
       back: Voltar
     posts:
