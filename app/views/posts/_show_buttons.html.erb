@@ -1,21 +1,24 @@
-
-<span class="mx-1  ALTER  d-inline-flex align-items-center">
-  <%= link_to edit_post_path, class: "edit-post-btn text-decoration-none  ALTER  d-flex align-items-center" do %>
-    <i class="bi bi-pencil me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edit_post") %>"></i>
+<span class="mx-1  d-flex gap-2  align-items-center">
+  <%= link_to edit_post_path, class: "edit-post-btn text-decoration-none d-flex align-items-center" do %>
+    <i class="bi bi-pencil mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edit_post") %>"></i>
   <% end %>
-  <%= button_to post_path(@post), method: :delete,
-        data: { confirm: I18n.t("app.posts.confirm_delete") },
-        class: "delete-post-btn text-decoration-none  ALTER  d-flex align-items-center",
-        form: { style: "display: inline;" }  do %>
-    <i class="bi bi-trash3 me-2 data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.delete_post") %>""></i>
+
+  <%= form_with url: post_path(@post), method: :delete, data: { confirm: I18n.t("app.posts.confirm_delete") }, html: { class: "delete-post-form d-flex align-items-center m-0" } do %>
+    <%= button_tag type: "submit", id: "delete-post-btn" , class: "delete-post-btn text-decoration-none d-flex align-items-center border-0 bg-transparent", data: { turbo: false } do %>
+      <i class="bi bi-trash3 me-2" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.delete_post") %>"></i>
+    <% end %>
   <% end %>
 </span>
 
 <div class="text-end">
   <% if @post.edited? %>
-    <span class="ms-2 edited-icon  ALTER  d-inline-flex align-items-center">
+    <span class="mx-1 edited-icon d-inline-flex align-items-center">
       <i class="bi bi-marker-tip" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edited_post") %>"></i>
     </span>
   <% end %>
-  <i class="bi bi-clock ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
+  <i class="bi bi-clock mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.l(@post.created_at, format: :custom) %>"></i>
 </div>
+
+
+
+

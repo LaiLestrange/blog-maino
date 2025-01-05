@@ -8,7 +8,7 @@ describe 'Blogger deletes post' do
     login_as blogger
     visit post_path(post)
     accept_confirm do
-      find('.delete-post-btn').click
+      find('#delete-post-btn', visible: :all).trigger('click')
     end
 
     expect(page).to have_content 'Post deletado com sucesso!'
