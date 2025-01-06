@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   validates :text, presence: true
   validates :text, length: { maximum: 140 }
 
-  enum :status, { posted: 0, edited: 5, deleted: 9 }, default: :posted
+  enum :status, { posted: 0, edited: 3, deleted: 5, recycled: 7 }, default: :posted
 
   after_update :post_updated
 
