@@ -112,7 +112,7 @@ pt-BR:
       invalid_currency: "deve estar no formato 0,00"
       accepted: deve ser aceito
       blank: não pode ficar em branco
-      confirmation: não é igual a %{attribute}
+      confirmation: e %{attribute} não combinam
       empty: não pode ficar vazio
       equal_to: deve ser igual a %{count}
       even: deve ser par

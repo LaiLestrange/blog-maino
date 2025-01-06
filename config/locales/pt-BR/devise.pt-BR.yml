@@ -101,11 +101,12 @@ pt-BR:
         cancel_account: Cancelar conta
         currently_waiting_confirmation_for_email: "No momento esperando por: %{email}"
         leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
+        fill_to_change: preencha para alterar
         title: Editar %{resource}
         unhappy: Não está contente?
         update: Atualizar
         current_password: Senha atual
-        to_confirm: para confirmar alterações
+        to_confirm: Sua senha atual para confirmar alterações
       new:
         sign_up: Cadastrar-se
         new_sign_up: Cadastrar usuário

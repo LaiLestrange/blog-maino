@@ -7,20 +7,26 @@
           <p class="mt-1 small text-muted text-end"> <%= too_long_message  %></p>
         <% end %>
   </div>
+
   <div class="field mb-3">
       <%= f.text_field :tag_list, id: 'post_tags', class: "form-control form-control-sm tags-field mb-1",
         placeholder: I18n.t("app.posts.insert_tags"), aria: { label: I18n.t("app.posts.post_tags") } %>
   </div>
+
   <div class="mt-2 d-flex align-items-center justify-content-between actions">
-      <% if controller_name == "posts" && ["new"].include?(action_name) %>
-        <% label = I18n.t("app.posts.submit") %>
-        <%= render  "layouts/posts/buttons/btn_submit_post", label: label %>
-      <% elsif controller_name == "posts" && ["edit"].include?(action_name) %>
-        <% label = I18n.t("app.posts.update")  %>
-        <%= render  "layouts/posts/buttons/btn_submit_post", label: label %>
-        <%= render  "layouts/posts/buttons/btn_delete_post" %>
+      <% if controller_name == "posts" %>
+        <% if action_name == "new" %>
+          <% label = I18n.t("app.posts.submit") %>
+        <% elsif action_name == "edit" %>
+          <% label = I18n.t("app.posts.update") %>
+        <% end %>
+        <%= render "layouts/buttons/btn_submit", label: label %>
+        <% if action_name == "edit" %>
+          <%= render "layouts/posts/buttons/btn_delete_post" %>
+        <% end %>
       <% end %>
    </div>
+   
 <% end %>
 
 

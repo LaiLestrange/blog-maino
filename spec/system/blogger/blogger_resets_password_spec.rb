@@ -32,13 +32,12 @@ describe 'Blogger changes their password' do
     login_as blogger
     visit root_path
     find('.edit-profile-btn').click
-    find('.edit-password-btn').click
-    fill_in 'Senha atual', with: 'senha123'
     fill_in 'Nova senha', with: 'p4ssw0rd'
     fill_in 'Confirmar nova senha', with: 'p4ssw0rd'
-    click_button 'Redefinir senha'
+    fill_in 'Sua senha atual para confirmar alterações', with: 'senha123'
+    find('.submit-btn').click
 
-    expect(page).to have_content('Sua senha foi redefinida com sucesso!')
+    expect(page).to have_content('Cadastro atualizado com sucesso.')
   end
 end
 
@@ -48,23 +47,23 @@ describe 'Blogger cant change their password' do
 
     login_as blogger
     visit edit_blogger_registration_path
-    fill_in 'Senha atual', with: 'ERRADA'
     fill_in 'Nova senha', with: 'p4ssw0rd'
     fill_in 'Confirmar nova senha', with: 'p4ssw0rd'
-    click_button 'Redefinir senha'
+    fill_in 'Sua senha atual para confirmar alterações', with: 'ERRADA'
+    find('.submit-btn').click
 
-    expect(page).to have_content('Senha atual inválida!')
+    expect(page).to have_content('Senha atual não é válido')
   end
   it 'new password and confirmation doesnt match' do
     blogger = create(:blogger, password: 'senha123')
 
     login_as blogger
     visit edit_blogger_registration_path
-    fill_in 'Senha atual', with: 'senha123'
     fill_in 'Nova senha', with: 'SENHA123'
     fill_in 'Confirmar nova senha', with: 'NAOCOMBINA'
-    click_button 'Redefinir senha'
+    fill_in 'Sua senha atual para confirmar alterações', with: 'senha123'
+    find('.submit-btn').click
 
-    expect(page).to have_content('Confirmação de senha não combina!')
+    expect(page).to have_content('Confirme a senha e Senha não combinam')
   end
 end

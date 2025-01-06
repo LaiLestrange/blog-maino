@@ -14,3 +14,7 @@
   text-decoration: none;
   color: inherit;
 }
+
+input:placeholder-shown {
+  font-size: 0.75em;
+}
