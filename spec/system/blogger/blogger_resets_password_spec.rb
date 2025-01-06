@@ -18,7 +18,7 @@ describe 'Blogger recovers their password' do
     click_button 'Redefinir senha'
 
     expect(mail.to).to include(blogger.email)
-    expect(mail.subject).to eq('Instruções para resetar a senha')
+    expect(mail.subject).to eq('Instruções de redefinição de senha')
     expect(page).to have_content('Sua senha foi redefinida com sucesso!')
     expect(page).to have_current_path(root_path)
   end
