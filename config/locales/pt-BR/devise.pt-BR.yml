@@ -86,8 +86,8 @@ pt-BR:
         confirm_new_password: Confirme sua nova senha
         new_password: Nova senha
       new:
-        forgot_your_password: Esqueceu sua senha?
-        send_me_reset_password_instructions: Enviar instruções para redefinição da senha
+        forgot_your_password: Recuperar a senha
+        send_mail_instructions: Enviar instruções por e-mail
       no_token: Você não pode acessar esta página sem estar logado. Se você veio de um email de redefinição de senha, por favor certifique-se de ter digitado a URL corretamente.
       send_instructions: Dentro de minutos, você receberá um e-mail com as instruções de redefinição da sua senha.
       send_paranoid_instructions: Se o seu email existir em nosso banco de dados, você receberá um email com um link para recuperação da senha.
@@ -155,3 +155,9 @@ pt-BR:
       cant_save: "Não foi possível salvar"
       verify_error: "Verifique os erros abaixo:"
       not_alphanumeric: "deve conter apenas letras e/ou números"
+  mailers:
+    greetings: Olá, %{name}
+    theres_been_a_request: Alguém requisitou o link para resetar a sua senha. Isso será possível através do link abaixo.
+    change_my_password: Resetar minha senha
+    if_it_wasnt_you: Se não reconhece a origem dessa requisição, por favor, ignore esse e-mail.
+    information_about_password_change: Sua senha não mudará até que você acesse o link acima e crie uma senha nova.

@@ -5,10 +5,10 @@ describe 'Blogger recovers their password' do
     blogger = create(:blogger, password: 'senha123')
 
     visit root_path
-    cick_on 'Entrar'
-    cick_on 'Esqueci a senha'
+    click_on 'Entrar'
+    click_on 'Recuperar a senha'
     fill_in 'E-mail', with: blogger.email
-    click_button 'Enviar instruções'
+    click_button 'Enviar instruções por e-mail'
 
     mail = ActionMailer::Base.deliveries.last
     token = mail.body.match(/reset_password_token=(\w+)/)[1]
