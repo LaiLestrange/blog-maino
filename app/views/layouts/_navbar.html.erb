@@ -3,7 +3,7 @@
     <h1 class="navbar-brand mb-0 me-0"><%= link_to I18n.t("app.title"), root_path %></h1>
     <% if blogger_signed_in? %>
       <div>
-        <%= link_to edit_blogger_registration_path, class: "btn btn-outline-secondary btn-sm" do %>
+        <%= link_to posts_path, class: "btn btn-outline-secondary btn-sm" do %>
           <i class="bi bi-person-fill"></i>
           <span class="mx-1"><%= current_blogger.username %></span>
         <% end %>

@@ -5,8 +5,8 @@ describe 'Blogger edits account' do
     blogger = create(:blogger, username: 'blogger2024')
 
     login_as blogger
-    visit edit_blogger_registration_path
-    click_on 'blogger2024'
+    visit root_path
+    find('.edit-profile-btn').click
     fill_in 'Usuário', with: 'gossiper2025'
     fill_in 'Senha atual', with: blogger.password
     click_on 'Atualizar'
@@ -19,8 +19,8 @@ describe 'Blogger edits account' do
     blogger = create(:blogger, username: 'blogger2024')
 
     login_as blogger
-    visit edit_blogger_registration_path
-    click_on 'blogger2024'
+    visit root_path
+    find('.edit-profile-btn').click
     fill_in 'Usuário', with: 'gossiper2025'
     click_on 'Atualizar'
 

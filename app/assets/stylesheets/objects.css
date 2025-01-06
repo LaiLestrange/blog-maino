@@ -1,12 +1,3 @@
-.new-post-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 50px;
-  height: 50px;
-  z-index: 1050;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
 
 .post-field {
   height: 100px;
@@ -20,7 +11,7 @@
 
 
 /* Estilização global para alinhar link e botão */
-.edit-post-btn, .delete-post-btn {
+.submit-post-btn, .edit-post-btn, .delete-post-btn, .back-btn {
   border: none;
   background: none;
   padding: 0;
@@ -34,12 +25,14 @@
   transition: color 0.2s ease-in-out;
 }
 
-.delete-post-btn form {
+.delete-post-btn form, submit-post-btn form {
   display: inline;
   margin: 0;
   padding: 0;
 }
 
+.back-btn:hover i,
+.submit-post-btn:hover i,
 .edit-post-btn:hover i,
 .delete-post-btn:hover i {
   color: #007BFF;

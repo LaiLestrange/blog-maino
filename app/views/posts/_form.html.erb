@@ -8,13 +8,26 @@
         <% end %>
   </div>
   <div class="mt-4 mb-2 d-flex align-items-center justify-content-between">
-    <div class="actions">
-      <% label = I18n.t("app.posts.submit") if controller_name == "posts" && ["new"].include?(action_name)  %>
-      <% label = I18n.t("app.posts.update") if controller_name == "posts" && ["edit"].include?(action_name)  %>
-      <%= f.submit label, class: "btn btn-secondary btn-sm", data: { turbo: false }  %>
-    </div>
-    <div>
-        <%= link_to I18n.t("app.btn.back"), :back, class: "btn btn-outline-secondary btn-sm" %>
-    </div>
+      <% if controller_name == "posts" && ["new"].include?(action_name) %>
+        <% label = I18n.t("app.posts.submit") %>
+        <%= render  "layouts/posts/btn_submit_post", label: label %>
+      <% elsif controller_name == "posts" && ["edit"].include?(action_name) %>
+        <% label = I18n.t("app.posts.update")  %>
+        <%= render  "layouts/posts/btn_submit_post", label: label %>
+        <%= render  "layouts/posts/btn_delete_post" %>
+      <% end %>
   </div>
 <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+

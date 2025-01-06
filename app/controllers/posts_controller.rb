@@ -1,7 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authenticate_blogger!
-  before_action :set_blogger, only: [:new, :create]
+  before_action :authenticate_blogger!, except: [:show]
+  before_action :set_blogger, only: [:new, :create, :index]
   before_action :set_post, only: [:show, :edit, :update, :delete_post]
+
+  def index
+    @posts = @blogger.posts.where.not(status: :deleted).order(created_at: :desc).page(params[:page]).per(3)
+  end
+
   def show; end
 
   def new
@@ -22,7 +27,6 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      @post.edited!
       redirect_to post_path(@post), notice: I18n.t('app.posts.updated_post')
     else
       flash.now[:alert] = I18n.t('app.posts.cant_update')

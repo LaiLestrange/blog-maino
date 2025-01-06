@@ -1,0 +1,4 @@
+  <% tooltip_edited = I18n.t("app.posts.updated_post_at", time: I18n.l(post.updated_at, format: :custom) ) %>
+  <span class="mx-1 edited-icon d-inline-flex align-items-center">
+    <i class="bi bi-marker-tip" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= tooltip_edited %>"></i>
+  </span>

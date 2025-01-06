@@ -9,6 +9,8 @@ pt-BR:
         other: posts
   app:
     title: Blog Mainô
+    feed: Posts mais recentes
+    my_feed: Meus posts mais recentes
     btn:
       back: Voltar
     posts:
@@ -20,6 +22,7 @@ pt-BR:
       confirm_delete: Quer mesmo deletar o post?
       cant_post: Não foi possível postar!
       cant_update: Não foi possível atualizar!
+      save: Salvar
       submit: Postar
       update: Atualizar
       edited_post: Editado

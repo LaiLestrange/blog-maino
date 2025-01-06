@@ -1,11 +1,7 @@
 <div class="mt-5 d-flex justify-content-center align-items-center ">
   <div class="p-4 border rounded-3 shadow W350">
-    <div class="mb-4 edit-post-form ">
+    <div class="edit-post-form ">
       <%= render 'posts/form' %>
-    </div>
-
-    <div class="text-end">
-        <%= link_to I18n.t("app.posts.delete_post"), delete_post_path, class: "btn btn-danger btn-sm" %>
     </div>
   </div>
 </div>
