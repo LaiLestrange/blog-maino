@@ -10,6 +10,7 @@ pt-BR:
   app:
     title: Blog Mainô
     feed: Posts mais recentes
+    my_feed: Meus posts mais recentes
     btn:
       back: Voltar
     posts:
