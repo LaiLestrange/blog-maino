@@ -5,10 +5,7 @@
       <p class="text-muted small m-0">@<%= post.blogger.username %></p>
     </div>
     <div class="d-flex gap-2 align-items-center text-muted small">
-      <% if post.edited? %>
-        <%= render  "layouts/posts/icon_edited_time", post: post %>
-      <% end %>
-      <%= render  "layouts/posts/icon_created_time", post: post %>
+        <%= render  "layouts/posts/icons_post", post: post %>
     </div>
   </div>
   <div class="the-post p-3  rounded ">

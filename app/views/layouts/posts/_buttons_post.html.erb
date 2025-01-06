@@ -1,0 +1,5 @@
+<% if post.deleted? %>
+  <%= render "layouts/posts/btn_recycle_post", post: post %>
+<% else %>
+  <%= render "layouts/posts/btn_delete_post", post: post %>
+<% end %>

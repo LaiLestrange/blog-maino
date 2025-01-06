@@ -1,19 +1,11 @@
-
 <div class="text-end">
-  <% if post.edited? %>
-    <%= render  "layouts/posts/icon_edited_time", post: post %>
-  <% end %>
-  <%= render  "layouts/posts/icon_created_time", post: post %>
+  <%= render "layouts/posts/icons_post", post: post %>
 </div>
 
-<span class="mx-1  d-flex gap-2  align-items-center">
+<span class="mx-1 d-flex gap-2 align-items-center">
   <% if blogger_signed_in? && post.blogger == current_blogger %>
-    <%= link_to delete_post_path, class: "delete-post-btn text-decoration-none d-flex align-items-center" do %>
-      <i class="bi bi-trash3 mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.delete_post") %>"></i>
-    <% end %>
-    <%= link_to edit_post_path, class: "edit-post-btn text-decoration-none d-flex align-items-center" do %>
-      <i class="bi bi-pencil mx-1" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("app.posts.edit_post") %>"></i>
-    <% end %>
+    <%= render "layouts/posts/buttons_post", post: post %>
+    <%= render "layouts/posts/btn_edit_post", post: post %>
   <% end %>
-  <%= render  "layouts/btn_back" %>
+  <%= render "layouts/btn_back" %>
 </span>
