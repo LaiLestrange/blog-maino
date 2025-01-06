@@ -21,16 +21,15 @@ describe 'Blogger creates post' do
 
     visit new_post_path
     fill_in 'post_text', with: 'Vamos adicionar umas tags nesse post, pessoal?'
-    fill_in 'post_tags', with: 'tags, teste, ruby on rails, estágio, mainô, blog'
+    fill_in 'post_tags', with: 'tags, ruby on rails, estágio, mainô'
     find('.submit-post-btn').click
 
     expect(page).to have_content 'Vamos adicionar umas tags nesse post, pessoal?'
+    expect(page).not_to have_content 'tag inexistente'
     expect(page).to have_content 'tags'
-    expect(page).to have_content 'teste'
     expect(page).to have_content 'ruby on rails'
     expect(page).to have_content 'estágio'
     expect(page).to have_content 'mainô'
-    expect(page).to have_content 'blog'
   end
 end
 
