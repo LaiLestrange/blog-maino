@@ -14,11 +14,11 @@
   <div class="mt-2 d-flex align-items-center justify-content-between actions">
       <% if controller_name == "posts" && ["new"].include?(action_name) %>
         <% label = I18n.t("app.posts.submit") %>
-        <%= render  "layouts/posts/btn_submit_post", label: label %>
+        <%= render  "layouts/posts/buttons/btn_submit_post", label: label %>
       <% elsif controller_name == "posts" && ["edit"].include?(action_name) %>
         <% label = I18n.t("app.posts.update")  %>
-        <%= render  "layouts/posts/btn_submit_post", label: label %>
-        <%= render  "layouts/posts/btn_delete_post" %>
+        <%= render  "layouts/posts/buttons/btn_submit_post", label: label %>
+        <%= render  "layouts/posts/buttons/btn_delete_post" %>
       <% end %>
    </div>
 <% end %>

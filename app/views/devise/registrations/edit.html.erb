@@ -36,8 +36,12 @@
           <div class="actions">
             <%= f.submit I18n.t("devise.registrations.edit.update"), class: "btn btn-success btn-sm" %>
           </div>
+
           <div>
-            <%= link_to I18n.t("devise.shared.links.back"), :back, class: "btn btn-secondary btn-sm" %>
+            <%= render  "layouts/buttons/btn_edit_password", resource: resource %>
+          </div>
+          <div>
+            <%= render  "layouts/buttons/btn_back" %>
           </div>
         </div>
         <%= render "devise/shared/error_messages", resource: resource %>
