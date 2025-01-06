@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :blogger
+  acts_as_taggable_on :tags
+  accepts_nested_attributes_for :tags
 
   validates :text, presence: true
   validates :text, length: { maximum: 140 }

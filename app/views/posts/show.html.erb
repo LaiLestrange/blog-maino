@@ -10,9 +10,16 @@
       <p class="m-0"><%= @post.text %></p>
     </div>
 
+    <% if @post.tag_list.present? %>
+      <div class="text-center mb-3 tags">
+        <%= render  "posts/show_tags", post: @post %>
+      </div>
+    <% end %>
+
     <div class="d-flex justify-content-between align-items-center text-muted small">
       <%= render  "layouts/posts/show_buttons", post: @post %>
     </div>
 
   </div>
 </div>
+

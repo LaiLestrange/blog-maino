@@ -11,14 +11,17 @@ pt-BR:
     title: Blog Mainô
     feed: Posts mais recentes
     my_feed: Meus posts mais recentes
+    tags: tags
     btn:
       back: Voltar
     posts:
       post_text: post
+      post_tags: tags
       new_post: Novo post
       edit_post: Editar post
       delete_post: Deletar post
       write_post: O que está pensando?
+      insert_tags: tags, separadas por vírgula
       confirm_delete: Quer mesmo deletar o post?
       cant_post: Não foi possível postar!
       cant_update: Não foi possível atualizar!
