@@ -8,7 +8,7 @@ describe 'Blogger creates post' do
     visit root_path
     find('.new-post-btn').click
     fill_in 'post_text', with: 'E aí pessoal! Esse é meu primeiro post!'
-    find('.submit-post-btn').click
+    find('.submit-btn').click
 
     expect(page).to have_content 'E aí pessoal! Esse é meu primeiro post!'
     expect(page).to have_content 'Postado com sucesso!'
@@ -22,7 +22,7 @@ describe 'Blogger creates post' do
     visit new_post_path
     fill_in 'post_text', with: 'Vamos adicionar umas tags nesse post, pessoal?'
     fill_in 'post_tags', with: 'tags, ruby on rails, estágio, mainô'
-    find('.submit-post-btn').click
+    find('.submit-btn').click
 
     expect(page).to have_content 'Vamos adicionar umas tags nesse post, pessoal?'
     expect(page).not_to have_content 'tag inexistente'
@@ -43,7 +43,7 @@ describe 'Blogger cant create post' do
     visit root_path
     find('.new-post-btn').click
     fill_in 'post_text', with: text_longer_than_140char
-    find('.submit-post-btn').click
+    find('.submit-btn').click
 
     expect(page).to have_content 'Não foi possível postar!'
     expect(page).to have_content 'Use apenas 140 caracteres!'

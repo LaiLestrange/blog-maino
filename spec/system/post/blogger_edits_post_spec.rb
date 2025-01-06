@@ -9,7 +9,7 @@ describe 'Blogger edits post' do
     visit post_path(post)
     find('.edit-post-btn').click
     fill_in 'post_text', with: 'edited text'
-    find('.submit-post-btn').click
+    find('.submit-btn').click
 
     expect(current_path).to eq post_path(post)
     expect(page).not_to have_content 'original text'
@@ -29,7 +29,7 @@ describe 'Blogger cant edit post' do
     login_as blogger
     visit edit_post_path(post)
     fill_in 'post_text', with: text_longer_than_140char
-    find('.submit-post-btn').click
+    find('.submit-btn').click
 
     expect(page).to have_content 'Não foi possível atualizar!'
     expect(page).to have_content 'Use apenas 140 caracteres!'

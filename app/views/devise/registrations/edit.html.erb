@@ -1,47 +1,11 @@
 <div class="mt-5 d-flex justify-content-center align-items-center">
-
   <div class="p-4 border rounded-3 shadow MW400">
     <div class="text-center mb-4">
-      <h2><%= I18n.t("devise.registrations.edit.edit_profile")%></h2>
+      <h2><%= I18n.t("devise.registrations.edit.edit_profile") %></h2>
     </div>
 
-    <div class="my-1 sign-up-form ">
-     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-
-        <div class="field mb-2">
-          <%= f.label :email, class: "col-form-label-sm" %>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-sm" %>
-        </div>
-
-        <div class="mb-2 gap-3 d-flex align-items-center justify-content-between">
-          <div class="field mb-2">
-            <%= f.label :fullname, class: "col-form-label-sm" %>
-            <%= f.text_field :fullname, class: "form-control form-control-sm" %>
-          </div>
-
-          <div class="field mb-2">
-            <%= f.label :username, class: "col-form-label-sm" %>
-            <%= f.text_field :username, class: "form-control form-control-sm" %>
-          </div>
-        </div>
-
-        <div class="mb-2 gap-3 d-flex align-items-center justify-content-center">
-          <div class="field mb-2">
-            <%= f.label :current_password, I18n.t("devise.registrations.edit.current_password"), class: "col-form-label-sm" %>
-            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: I18n.t("devise.registrations.edit.to_confirm"), class: "form-control form-control-sm" %>
-          </div>
-        </div>
-
-        <div class="mb-2 d-flex align-items-center justify-content-between">
-          <div class="actions">
-            <%= f.submit I18n.t("devise.registrations.edit.update"), class: "btn btn-success btn-sm" %>
-          </div>
-          <div>
-            <%= link_to I18n.t("devise.shared.links.back"), :back, class: "btn btn-secondary btn-sm" %>
-          </div>
-        </div>
-        <%= render "devise/shared/error_messages", resource: resource %>
-      <% end %>
+    <div class="my-1 edit-sign-up-form">
+      <%= render 'devise/registrations/form' %>
     </div>
   </div>
 </div>

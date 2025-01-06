@@ -82,17 +82,17 @@ pt-BR:
     passwords:
       edit:
         change_password: Alterar senha
-        change_your_password: Alterar sua senha
-        confirm_new_password: Confirme sua nova senha
+        change_your_password: Redefinir senha
+        confirm_new_password: Confirmar nova senha
         new_password: Nova senha
       new:
-        forgot_your_password: Esqueceu sua senha?
-        send_me_reset_password_instructions: Enviar instruções para redefinição da senha
+        forgot_your_password: Recuperar a senha
+        send_mail_instructions: Enviar instruções por e-mail
       no_token: Você não pode acessar esta página sem estar logado. Se você veio de um email de redefinição de senha, por favor certifique-se de ter digitado a URL corretamente.
       send_instructions: Dentro de minutos, você receberá um e-mail com as instruções de redefinição da sua senha.
       send_paranoid_instructions: Se o seu email existir em nosso banco de dados, você receberá um email com um link para recuperação da senha.
-      updated: A sua senha foi alterada com sucesso. Você está autenticado.
-      updated_not_active: Sua senha foi alterada com sucesso.
+      updated: Sua senha foi redefinida com sucesso!
+      updated_not_active: Sua senha foi alterada com sucesso. Faça o login!
     registrations:
       destroyed: Adeus! A sua conta foi cancelada com sucesso. Esperamos vê-lo novamente em breve.
       edit:
@@ -101,11 +101,12 @@ pt-BR:
         cancel_account: Cancelar conta
         currently_waiting_confirmation_for_email: "No momento esperando por: %{email}"
         leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
+        fill_to_change: preencha para alterar
         title: Editar %{resource}
         unhappy: Não está contente?
         update: Atualizar
         current_password: Senha atual
-        to_confirm: para confirmar alterações
+        to_confirm: Sua senha atual para confirmar alterações
       new:
         sign_up: Cadastrar-se
         new_sign_up: Cadastrar usuário
@@ -155,3 +156,9 @@ pt-BR:
       cant_save: "Não foi possível salvar"
       verify_error: "Verifique os erros abaixo:"
       not_alphanumeric: "deve conter apenas letras e/ou números"
+  mailers:
+    greetings: Olá, %{name}
+    theres_been_a_request: Alguém requisitou o link para resetar a sua senha. Isso será possível através do link abaixo.
+    change_my_password: Resetar minha senha
+    if_it_wasnt_you: Se não reconhece a origem dessa requisição, por favor, ignore esse e-mail.
+    information_about_password_change: Sua senha não mudará até que você acesse o link acima e crie uma senha nova.

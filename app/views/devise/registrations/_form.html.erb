@@ -1,0 +1,50 @@
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+        <div class="field mb-3">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-sm form-text mb-1",
+          placeholder:  I18n.t("activerecord.attributes.blogger.email"), aria: { label: I18n.t("activerecord.attributes.blogger.email") }, required: true %>
+        </div>
+
+        <div class="mb-3 gap-3 d-flex">
+          <div class="field w-50">
+            <%= f.text_field :fullname, class: "form-control form-control-sm form-text mb-1",
+          placeholder:  I18n.t("activerecord.attributes.blogger.fullname"), aria: { label: I18n.t("activerecord.attributes.blogger.fullname") }, required: true %>
+          </div>
+
+          <div class="field w-50">
+            <%= f.text_field :username, class: "form-control form-control-sm form-text mb-1",
+          placeholder:  I18n.t("activerecord.attributes.blogger.username"), aria: { label: I18n.t("activerecord.attributes.blogger.username") }, required: true %>
+          </div>
+        </div>
+
+        <div class="bg-light p-4 rounded-3 shadow-sm mb-4">
+          <div class="text-center text-muted small mb-3">
+            <p class="m-0"> <%= I18n.t("devise.registrations.edit.fill_to_change") %></p>
+          </div>
+
+          <div class="mb-3 gap-3 d-flex">
+            <div class="field w-50">
+              <%= f.password_field :password, autocomplete: "new-password",  class: "form-control form-control-sm form-text placeholder-sm mb-1",
+                  placeholder: I18n.t("devise.passwords.edit.new_password") , aria: { label: I18n.t("devise.passwords.edit.new_password") } %>
+            </div>
+
+            <div class="field w-50">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "form-control form-control-sm form-text mb-1",
+                  placeholder:  I18n.t("devise.passwords.edit.confirm_new_password"), aria: { label: I18n.t("devise.passwords.edit.confirm_new_password") } %>
+            </div>
+          </div>
+        </div>
+
+          <div class="mt-4 mb-1">
+            <%= f.password_field :current_password, autocomplete: "current-password", placeholder: I18n.t("devise.registrations.edit.to_confirm"),
+                class: "form-control form-control-sm form-text mb-1",aria: { label: I18n.t("devise.registrations.edit.current_password") }  %>
+          </div>
+
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="mt-2 d-flex justify-content-between">
+          <%= render "layouts/buttons/btn_submit", label: I18n.t("devise.registrations.edit.update") %>
+          <%= render "layouts/buttons/btn_back" %>
+        </div>
+
+      <% end %>

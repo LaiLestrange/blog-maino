@@ -11,7 +11,7 @@
 
 
 /* Estilização global para alinhar link e botão */
-.submit-post-btn, .edit-post-btn, .delete-post-btn, .recycle-post-btn, .back-btn {
+.submit-btn, .edit-post-btn, .delete-post-btn, .recycle-post-btn, .back-btn {
   border: none;
   background: none;
   padding: 0;
@@ -25,14 +25,14 @@
   transition: color 0.2s ease-in-out;
 }
 
-.delete-post-btn form, submit-post-btn form, .recycle-post-btn form {
+.delete-post-btn form, submit-btn form, .recycle-post-btn form {
   display: inline;
   margin: 0;
   padding: 0;
 }
 
 .back-btn:hover i,
-.submit-post-btn:hover i,
+.submit-btn:hover i,
 .edit-post-btn:hover i,
 .delete-post-btn:hover i,
 .recycle-post-btn:hover i {

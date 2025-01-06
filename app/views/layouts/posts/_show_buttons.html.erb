@@ -1,11 +1,11 @@
 <div class="text-end">
-  <%= render "layouts/posts/icons_post", post: post %>
+  <%= render "layouts/posts/icons/icons_post", post: post %>
 </div>
 
 <span class="mx-1 d-flex gap-2 align-items-center">
   <% if blogger_signed_in? && post.blogger == current_blogger %>
     <%= render "layouts/posts/buttons_post", post: post %>
-    <%= render "layouts/posts/btn_edit_post", post: post %>
+    <%= render "layouts/posts/buttons/btn_edit_post", post: post %>
   <% end %>
-  <%= render "layouts/btn_back" %>
+  <%= render "layouts/buttons/btn_back" %>
 </span>

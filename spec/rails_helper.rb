@@ -48,9 +48,6 @@ RSpec.configure do |config|
   Capybara.default_driver = :rack_test
   Capybara.javascript_driver = :cuprite
 
-  # config.before(type: :system) do
-  #   driven_by(:rack_test)
-  # end
   config.before(:each, type: :system) do |example|
     if example.metadata[:js]
       driven_by(:cuprite, options: {
@@ -63,6 +60,11 @@ RSpec.configure do |config|
     else
       driven_by(:rack_test)
     end
+  end
+
+  config.before(:each) do
+    ActionMailer::Base.deliveries.clear
+    Devise.mailer.deliveries.clear
   end
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

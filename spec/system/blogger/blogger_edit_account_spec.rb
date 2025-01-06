@@ -8,8 +8,8 @@ describe 'Blogger edits account' do
     visit root_path
     find('.edit-profile-btn').click
     fill_in 'Usuário', with: 'gossiper2025'
-    fill_in 'Senha atual', with: blogger.password
-    click_on 'Atualizar'
+    fill_in 'Sua senha atual para confirmar alterações', with: blogger.password
+    find('.submit-btn').click
 
     expect(page).to have_content 'Cadastro atualizado com sucesso'
     expect(page).to have_content 'gossiper2025'
@@ -22,7 +22,7 @@ describe 'Blogger edits account' do
     visit root_path
     find('.edit-profile-btn').click
     fill_in 'Usuário', with: 'gossiper2025'
-    click_on 'Atualizar'
+    find('.submit-btn').click
 
     expect(page).to have_content 'Não foi possível salvar'
     expect(page).to have_content 'blogger2024'
