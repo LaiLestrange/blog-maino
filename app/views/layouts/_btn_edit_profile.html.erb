@@ -1,0 +1,8 @@
+<% unless controller_name == "registrations" && ["edit"].include?(action_name)  %>
+  <div data-bs-toggle="tooltip" data-bs-placement="top" title="<%= I18n.t("devise.registrations.edit.edit_profile") %>">
+    <%= link_to edit_blogger_registration_path, class: "edit-profile-btn btn btn-secondary rounded-circle d-flex align-items-center justify-content-center" do %>
+      <i class="bi bi-person-gear"></i>
+    <% end %>
+  </div>
+<% end %>
+
