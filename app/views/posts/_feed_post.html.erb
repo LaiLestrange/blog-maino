@@ -14,4 +14,9 @@
   <div class="the-post p-3  rounded ">
     <p class="m-0"><%= post.text %></p>
   </div>
+    <% if post.tag_list.present? %>
+      <div class="text-end mb-1 tags">
+        <%= render  "posts/show_tags", post: post %>
+      </div>
+    <% end %>
 </div>

@@ -1,13 +1,17 @@
 <%= form_with model: @post do |f|%>
-  <div class="field mb-2">
-    <%= f.text_area :text, autofocus: true, class: "form-control form-control-sm post-field",
+  <div class="field mb-3">
+    <%= f.text_area :text, autofocus: true, id: 'post_text' ,class: "form-control form-control-sm post-field mb-1",
         placeholder: I18n.t("app.posts.write_post"), aria: { label: I18n.t("app.posts.post_text") }, required: true %>
         <% if @post.errors[:text].any? %>
-        <% too_long_message = @post.errors.full_messages_for(:text).first.gsub(@post.class.human_attribute_name(:text), "").strip%>
+          <% too_long_message = @post.errors.full_messages_for(:text).first.gsub(@post.class.human_attribute_name(:text), "").strip%>
           <p class="mt-1 small text-muted text-end"> <%= too_long_message  %></p>
         <% end %>
   </div>
-  <div class="mt-4 mb-2 d-flex align-items-center justify-content-between">
+  <div class="field mb-3">
+      <%= f.text_field :tag_list, id: 'post_tags', class: "form-control form-control-sm tags-field mb-1",
+        placeholder: I18n.t("app.posts.insert_tags"), aria: { label: I18n.t("app.posts.post_tags") } %>
+  </div>
+  <div class="mt-2 d-flex align-items-center justify-content-between actions">
       <% if controller_name == "posts" && ["new"].include?(action_name) %>
         <% label = I18n.t("app.posts.submit") %>
         <%= render  "layouts/posts/btn_submit_post", label: label %>
@@ -16,7 +20,7 @@
         <%= render  "layouts/posts/btn_submit_post", label: label %>
         <%= render  "layouts/posts/btn_delete_post" %>
       <% end %>
-  </div>
+   </div>
 <% end %>
 
 
