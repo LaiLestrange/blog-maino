@@ -6,11 +6,9 @@
     </div>
     <div class="d-flex gap-2 align-items-center text-muted small">
       <% if post.edited? %>
-        <% tooltip_edited = I18n.t("app.posts.updated_post_at", time: I18n.l(post.updated_at, format: :custom)) %>
-        <i class="bi bi-marker-tip" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= tooltip_edited %>"></i>
+        <%= render  "layouts/posts/icon_edited_time", post: post %>
       <% end %>
-      <% tooltip_created = I18n.t("app.posts.created_post_at", time: I18n.l(post.created_at, format: :custom)) %>
-      <i class="bi bi-clock" data-bs-toggle="tooltip" data-bs-placement="top" title="<%= tooltip_created %>"></i>
+      <%= render  "layouts/posts/icon_created_time", post: post %>
     </div>
   </div>
   <div class="the-post p-3  rounded ">
