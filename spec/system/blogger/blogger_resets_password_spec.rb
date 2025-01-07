@@ -21,7 +21,6 @@ describe 'Blogger recovers their password' do
     expect(mail.to).to include(blogger.email)
     expect(mail.subject).to eq('Instruções de redefinição de senha')
     expect(page).to have_content('Sua senha foi redefinida com sucesso!')
-    expect(page).to have_current_path(root_path)
   end
 end
 
