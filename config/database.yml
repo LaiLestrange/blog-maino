@@ -22,6 +22,7 @@ test:
 production:
   <<: *default
   url: <%= ENV.fetch("DATABASE_PROD_URL") %>
+  host: <%= ENV.fetch("DB_PROD_HOST") %>
   database: <%= ENV.fetch("DB_NAME_PRODUCTION") %>
   username: <%= ENV.fetch("DB_USERNAME_PRODUCTION") %>
   password: <%= ENV.fetch("MAINOBLOG_DATABASE_PASSWORD") %>
