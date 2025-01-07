@@ -36,7 +36,7 @@ pt-BR:
       confirmed: A sua conta foi confirmada com sucesso.
       new:
         resend_confirmation_instructions: Reenviar instruções de confirmação
-      send_instructions: Dentro de minutos, você receberá um email com as instruções de confirmação da sua conta.
+      send_instructions: Logo você receberá um email com as instruções de confirmação da sua conta.
       send_paranoid_instructions: Se o seu e-mail existir em nosso banco de dados, você receberá um email com instruções sobre como confirmar sua conta em alguns minutos.
     failure:
       already_authenticated: Você já está autenticado.
@@ -89,7 +89,7 @@ pt-BR:
         forgot_your_password: Recuperar a senha
         send_mail_instructions: Enviar instruções por e-mail
       no_token: Você não pode acessar esta página sem estar logado. Se você veio de um email de redefinição de senha, por favor certifique-se de ter digitado a URL corretamente.
-      send_instructions: Dentro de minutos, você receberá um e-mail com as instruções de redefinição da sua senha.
+      send_instructions: Logo você receberá um e-mail com as instruções de redefinição da sua senha.
       send_paranoid_instructions: Se o seu email existir em nosso banco de dados, você receberá um email com um link para recuperação da senha.
       updated: Sua senha foi redefinida com sucesso!
       updated_not_active: Sua senha foi alterada com sucesso. Faça o login!
@@ -140,7 +140,7 @@ pt-BR:
     unlocks:
       new:
         resend_unlock_instructions: Reenviar instruções de desbloqueio
-      send_instructions: Dentro de minutos, você receberá um e-mail com instruções de desbloqueio da sua conta.
+      send_instructions: Logo você receberá um e-mail com instruções de desbloqueio da sua conta.
       send_paranoid_instructions: Se sua conta existir em nosso banco de dados, você receberá em breve um e-mail com instruções para desbloquear ela.
       unlocked: A sua conta foi desbloqueada com sucesso. Efetue login para continuar.
   errors:
