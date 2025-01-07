@@ -14,7 +14,7 @@ jobs:
         image: postgres:13
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: s3nh4
+          POSTGRES_PASSWORD: 123456
           POSTGRES_DB: mainoblog_test
         ports:
           - 5432:5432
@@ -22,7 +22,7 @@ jobs:
       RAILS_ENV: test
       PGHOST: 127.0.0.1
       PGUSER: postgres
-      PGPASSWORD: s3nh4
+      PGPASSWORD: 123456
       DB_USERNAME: ${{ secrets.DB_USERNAME }}
       DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
       DB_HOST: ${{ secrets.DB_HOST }}
@@ -32,6 +32,10 @@ jobs:
       DB_NAME_PRODUCTION: ${{ secrets.DB_NAME_PRODUCTION }}
       DB_USERNAME_PRODUCTION: ${{ secrets.DB_USERNAME_PRODUCTION }}
       MAINOBLOG_DATABASE_PASSWORD: ${{ secrets.MAINOBLOG_DATABASE_PASSWORD }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      DATABASE_PROD_URL: ${{ secrets.DATABASE_URL }}
+      DATABASE_TEST_URL: ${{ secrets.DATABASE_URL }}
+      DATABASE_DEV_URL: ${{ secrets.DATABASE_URL }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
