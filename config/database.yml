@@ -4,6 +4,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS", 5) %>
   host: <%= ENV.fetch("DB_HOST") %>
   port: <%= ENV.fetch("DB_PORT") %>
+  url: <%= ENV.fetch("DATABASE_URL") %>
 
 development:
   <<: *default
@@ -19,7 +20,7 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV.fetch("DATABASE_URL") %>
+  url: <%= ENV.fetch("DATABASE_PROD_URL") %>
   database: <%= ENV.fetch("DB_NAME_PRODUCTION") %>
   username: <%= ENV.fetch("DB_USERNAME_PRODUCTION") %>
   password: <%= ENV.fetch("MAINOBLOG_DATABASE_PASSWORD") %>
