@@ -12,6 +12,8 @@ describe 'Blogger recovers their password' do
 
     expect(page).to have_content('Logo você receberá um e-mail com as instruções de redefinição da sua senha.')
 
+    sleep 2
+
     mail = ActionMailer::Base.deliveries.last
     token = mail.body.match(/reset_password_token=(\w+)/)[1]
 
