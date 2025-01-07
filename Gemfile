@@ -49,7 +49,6 @@ gem 'bootstrap'
 gem 'cssbundling-rails'
 gem 'devise'
 gem 'kaminari'
-gem 'letter_opener'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -59,6 +58,7 @@ group :development, :test do
   gem 'debug', platforms: [:mri, :windows]
   gem 'dotenv-rails'
   gem 'factory_bot_rails'
+  gem 'letter_opener'
   gem 'rspec-rails'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
