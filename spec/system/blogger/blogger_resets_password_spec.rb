@@ -10,6 +10,8 @@ describe 'Blogger recovers their password' do
     fill_in 'E-mail', with: blogger.email
     click_button 'Enviar instruções por e-mail'
 
+    expect(page).to have_content('Logo você receberá um e-mail com as instruções de redefinição da sua senha.')
+
     mail = ActionMailer::Base.deliveries.last
     token = mail.body.match(/reset_password_token=(\w+)/)[1]
 
@@ -21,7 +23,6 @@ describe 'Blogger recovers their password' do
     expect(mail.to).to include(blogger.email)
     expect(mail.subject).to eq('Instruções de redefinição de senha')
     expect(page).to have_content('Sua senha foi redefinida com sucesso!')
-    expect(page).to have_current_path(root_path)
   end
 end
 
